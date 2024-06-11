@@ -20,7 +20,7 @@ def index() -> rx.Component:
         header_with_image_and_text(),
         quienes_somos_desktop(),
         quienes_somos_mobile(),
-        wine_line(),
+        #wine_line(),
         blog_desktop(),
         blog_mobile(),
         contact_and_title(),

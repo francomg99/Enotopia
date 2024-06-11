@@ -2,7 +2,7 @@ import reflex as rx
 from Eno.styles.styles import Size, Font, TextColor
 from Eno.components.title import title, others_titles
 from Eno.components.wine_line import wine_line
-from Eno.components.carrusel import que_ofrecemos
+from Eno.components.carrusel import que_ofrecemos, que_ofrecemos_mobile
 import Eno.styles.styles as styles
 
 def quienes_somos_desktop()->rx.Component:
@@ -169,19 +169,16 @@ def quienes_somos_mobile()->rx.Component:
             ),
             rx.box(
                 rx.vstack(
-                rx.box(
                 others_titles(
                     "¿Qué ofrecemos?"
-            
                 ),
                 rx.box(
-                #que_ofrecemos(),                                 
+                que_ofrecemos_mobile(),                                 
                 style={
                     "font_size": Size.LETTER.value,
                     'text_indent':"0.5 em",
                     'text_align': 'justify'
                 }
-                )
                 )
         )
             ),

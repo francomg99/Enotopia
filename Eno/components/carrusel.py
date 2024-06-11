@@ -11,7 +11,7 @@ class Slick(rx.Component):
     dots: bool = True
     infinite: bool = True
     speed: int = 500
-    arrows: bool = True
+    arrows: bool = False
     fade: bool = True
     is_default = True
     slides_to_show: int = 3,
@@ -70,6 +70,39 @@ def development_card(text, text1, text2, src) -> rx.Component:
             justify="center",
         ),
         width="100%",
+    )
+
+def development_card_mobile(text, text1, text2) -> rx.Component:
+    return rx.box(
+        rx.flex(
+            rx.box(
+                rx.text(text, size="9", style=styles.other_titles),
+                rx.text(
+                    text1,
+                    size="4",
+                    as_="p",
+                    padding="10px",
+                    style={
+                        'text_align': 'justify'
+                    }                
+                ),
+                rx.text(
+                    text2,
+                    size="4",
+                    as_="p",
+                    padding="10px",
+                    style={
+                        'text_align': 'justify'
+                    }                
+                ),
+                width="10%",  # Define el ancho del texto
+            ),
+            #direction="column",
+            gap="4px",
+            align="start",
+            justify="start",
+        ),
+        width="30%"
     )
 
 
@@ -137,58 +170,53 @@ def que_ofrecemos() -> rx.Component:
         on_mouse_up=ClickState.change_cursor,
         width="95%",
     )
-
-def que_ofrecemos_br() -> rx.Component:
+    
+def que_ofrecemos_mobile() -> rx.Component:
     return rx.box(
         slick(
-            development_card(
-                """• Visitas guiadas a vinícolas •""",
-                """Convidamos você para nossos exclusivos tours guiados pelas mais belas vinícolas da província. 
-                Mergulhe nos vinhedos mais prestigiados, aprenda sobre o processo de elaboração do vinho e desfrute de degustações 
-                exclusivas harmonizadas com iguarias locais.""",
-                """Mendoza oferece um ambiente incomparável para uma experiência enoturística. Não apenas você mergulhará na cultura do vinho, 
-                mas também desfrutará da calorosa hospitalidade de seu povo e da beleza de suas paisagens. Cada visita é uma oportunidade para 
-                viver momentos memoráveis.""",
-                """/andeluna.png"""
+            development_card_mobile(
+                """• Visitas guiadas a bodegas •""",
+                """Te invitamos a nuestras exclusivas visitas guiadas a las bodegas más hermosas de la provincia. Sumérgete en los viñedos más prestigiosos, 
+                aprende sobre el proceso de elaboración del vino y disfruta de degustaciones exclusivas maridadas con delicias locales.""", 
+                """Mendoza ofrece un entorno inigualable para una experiencia enoturística. No solo te sumergirás en la cultura del vino, 
+                sino que también disfrutarás de la calidez de su gente y la belleza de sus paisajes. Cada visita es una oportunidad para vivir 
+                momentos memorables.""",
                 ),
-            development_card(
-                """• Degustação exclusiva de vinhos •""",
-                """Organizamos degustações de vinhos conduzidas pelos melhores e mais experientes enólogos e sommeliers, que permitem aos nossos 
-                turistas explorar uma ampla gama de vinhos locais e descobrir novas variedades e estilos.""",
-                """As degustações são realizadas em ambientes totalmente inovadores, como vinícolas históricas, salas de degustação com vistas 
-                panorâmicas e encantadores pátios ao ar livre.""",
-                """/copa2.jpg"""
+            development_card_mobile(
+                """• Cata de vinos exclusiva •""",
+                """Organizamos catas de vinos dirigidas por los mejores y más expertos enólogos y sommeliers, que permiten a nuestros turistas explorar una amplia 
+                gama de vinos locales y descubrir nuevas variedades y estilos.""", 
+                """Las catas se llevan a cabo en entornos totalmente innovadores, como bodegas históricas, salas de degustación con vistas panorámicas 
+                y encantadores patios al aire libre.""",
                 ),
-            development_card(
-                """• Passeios pelos vinhedos •""",
-                """Oferecemos aos visitantes a oportunidade de mergulhar na beleza natural das paisagens vinícolas de Mendoza, enquanto aprendem sobre as 
-                diferentes variedades de uva cultivadas na região. Os participantes têm a oportunidade de interagir com viticultores locais e aprender 
-                sobre todas as práticas de cultivo.""",
-                """Além disso, poderão desfrutar da hospitalidade mendocina e degustar produtos locais frescos diretamente da fonte. 
-                Cada passeio é projetado para ser educativo e divertido, proporcionando uma compreensão profunda da história e da cultura vinícola de Mendoza.""",
-                """/viñedos.jpg"""
+            development_card_mobile(
+                """• Recorridos por Viñedos •""",
+                """Ofrecemos a los visitantes la oportunidad de sumergirse en la belleza natural de los paisajes vinícolas mendocinos, 
+                mientras aprenden sobre las diferentes variedades de uva cultivadas en la región. Los participantes tienen la oportunidad de interactuar con 
+                viticultores locales y aprender sobre todas las prácticas de cultivo.""", 
+                """Además, podrán disfrutar de la hospitalidad mendocina y degustar productos locales frescos directamente de la fuente.
+                Cada recorrido está diseñado para ser educativo y entretenido, proporcionando una comprensión profunda de la historia y la cultura vinícola 
+                de Mendoza.""",
                 ),
-            development_card(
-                """• Gastronomia Local •""",
-                """Enriquecemos nossas experiências vinícolas com degustações exquisitas da gastronomia local. Nossos eventos incluem harmonizações de vinhos 
-                com uma seleção de pratos tradicionais e gourmet que destacam o melhor da região. Em colaboração com chefs locais e restaurantes de renome.""",
-                """Cada evento é realizado em um ambiente acolhedor e elegante, variando de pátios ao ar livre a vinícolas históricas. Nossos sommeliers 
-                especializados estão sempre disponíveis para guiar os participantes através da experiência de harmonização, explicando como cada vinho 
-                complementa e realça os sabores dos pratos.""",
-                """/barrica1.jpg"""
+            development_card_mobile(
+                """• Gastronomía Local •""",
+                """Enriquecemos nuestras experiencias vinícolas con exquisitas degustaciones de la gastronomía local. Nuestros eventos incluyen maridajes de vinos 
+                con una selección de platos tradicionales y gourmet que resaltan lo mejor de la región. En colaboración con chefs locales y 
+                restaurantes de renombre.""", 
+                """Cada evento se celebra en un ambiente acogedor y elegante, variando desde patios al aire libre hasta bodegas históricas. 
+                Nuestros sommeliers expertos están siempre disponibles para guiar a los participantes a través de la experiencia de maridaje, explicando cómo 
+                cada vino complementa y realza los sabores de los platos.""",
                 ),
-            development_card(
-                """• Atividades Especiais •""",
-                """Além disso, oferecemos uma ampla variedade de atividades especiais. Desde emocionantes passeios de balão sobre os vinhedos até aulas de 
-                culinária com temática de vinho e workshops de vinificação, há algo para todos os gostos. Você também pode participar de excursões de 
-                bicicleta pelos vinhedos e explorar lugares históricos e culturais próximos.""",
-                """Essas experiências permitem que você mergulhe ainda mais na cultura do vinho e desfrute da beleza da região enquanto aprende 
-                sobre práticas de cultivo sustentável e viticultura orgânica sob a orientação de viticultores locais.""",
-                """/vinos.jpg"""
+            development_card_mobile(
+                """• Actividades Especiales •""",
+                """Además ofrecemos una amplia variedad de actividades especiales. 
+                Desde emocionantes paseos en globo aerostático sobre los viñedos hasta clases de cocina con temática de vino y talleres de elaboración de vinos, 
+                hay algo para cada gusto. También puedes participar en excursiones en bicicleta por los viñedos y explorar lugares históricos y culturales cercanos.""", 
+                """Estas experiencias te permiten sumergirte aún más en la cultura del vino y disfrutar de la belleza de la región mientras aprendes sobre 
+                prácticas de cultivo sostenible y viticultura orgánica de la mano de viticultores locales.""",
                 ),            
         ),
         on_mouse_down=ClickState.change_cursor,
         on_mouse_up=ClickState.change_cursor,
         width="95%",
     )
-

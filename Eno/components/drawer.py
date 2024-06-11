@@ -127,7 +127,7 @@ def wine_menu_mobile():
             <lord-icon
                 src="https://cdn.lordicon.com/dabfbizw.json"
                 trigger="hover"
-                style="width:90px;height:90px">
+                style="width:70px;height:70px">
             </lord-icon>"""
                 ),            on_click=DrawerState.toggle_menu, 
             size="lg", 
@@ -257,14 +257,7 @@ def br_wine_menu_mobile():
     return rx.mobile_only(
         rx.chakra.vstack(
         rx.chakra.button(
-            rx.html(
-                """<script src="https://cdn.lordicon.com/lordicon.js"></script>
-            <lord-icon
-                src="https://cdn.lordicon.com/dabfbizw.json"
-                trigger="hover"
-                style="width:90px;height:90px">
-            </lord-icon>"""
-                ),
+            rx.text("≡"),
             on_click=DrawerState.toggle_menu, 
             size="lg", 
             bg=Color.CUARTIARY.value, 
