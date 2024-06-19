@@ -15,7 +15,7 @@ def header_with_image_and_text():
                 color=TextColor.ACCENT.value,
                 font_family=Font.TITLE.value,
                 style={
-                    'font_size':["4em","5em"]
+                    'font_size':["4em","4.5em"]
                 }
             ),
             rx.text(
@@ -27,7 +27,7 @@ def header_with_image_and_text():
                 color=TextColor.ACCENT.value,
                 font_family=Font.TITLE.value,
                 style={
-                    'font_size':["4em","5em"]
+                    'font_size':["4em","4.5em"]
                 }
             ),            
             rx.chakra.link(
@@ -45,13 +45,20 @@ def header_with_image_and_text():
                     ),
                     href="/reservas",
             ),
-                bg="center/cover url('/montaña.jpg')",
+                style={
+                "background": f"linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('/montaña.jpg')",
+                "background_size": "cover",  # Ajustar el tamaño de fondo
+                "background_position": "center",  # Centrar la imagen de fondo
+                "padding": "20px",
+                "position": "relative",
+                "z_index": "0"  # Fondo detrás del texto
+                },                
                 align_items="center",
                 spacing="4",
                 width="100%",
-                height=["25em","37em"],
+                height=["25em","32em"],
                 padding_x=["1.5em","3em"],
-                padding_y=["5em","14em"],
+                padding_y=["5em","10em"],
                 top="0"
                 ),
     )

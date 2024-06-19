@@ -64,11 +64,11 @@ def blog(src: str,text: str, url:str) -> rx.Component:
                     _hover={"opacity": 0.8},
                 ),
                 rx.vstack(
-                rx.text(
+                rx.chakra.text(
                     text,
                     padding_right=Size.SMALL.value,
+                    bg=Color.ACCENT.value,
                     style={
-                        'background':Color.ACCENT.value,
                         'color':TextColor.PRIMARY.value,
                         'font_size':Size.LETTER.value,
                         'text_align': 'justify'
@@ -96,7 +96,7 @@ def blog(src: str,text: str, url:str) -> rx.Component:
             spacing="4",
             padding=Size.SMALL.value,
             margin=Size.SMALL.value,
-            border="0.5px solid #ECDAE2",
+            #border="0.5px solid #ECDAE2",
             border_radius="20px"# Estilo de borde agregado aquí
         )
     )

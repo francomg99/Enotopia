@@ -10,25 +10,19 @@ def navbar() -> rx.Component:
             rx.image(
                 src="/brasil.png",
                 alt="Bandera de Brasil - Cambio de idioma",
-                width=["2.5em","1.5em"],
+                width=["2.5em","2em"],
                 margin_left=["1em","3em"],
             ),
                 href="/br",
                 align_items="center"
             ),
-            rx.tablet_and_desktop(
-            rx.link("Portugués", align="left", weight="light", color=TextColor.PRIMARY.value, href="/br"),
-            direction="row",
-            align="center",
-            spacing="2"
-            )
             ),
             rx.chakra.link(
             rx.chakra.image(
                 src="/enotopia.png",
                 alt="Logo de Enotopía - Letras Negras",
-                width=["25em","15em"],
-                margin_left=["1em","4em"],
+                width=["25em","8em"],
+                margin=["1em","1em"],
             ),
                 href="/",
             ),
@@ -46,4 +40,4 @@ def navbar() -> rx.Component:
         top="0",
         width="100%",
         align="center"
-    )#
+    )

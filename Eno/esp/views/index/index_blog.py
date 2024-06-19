@@ -42,7 +42,6 @@ def blog_mobile() -> rx.Component:
                 rx.vstack(
                     rx.box(
                         title("BLOG"),
-                        #padding_left=Size.BIG.value,
                         width="100%"
                     ),
                     rx.vstack(  

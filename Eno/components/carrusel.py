@@ -14,8 +14,8 @@ class Slick(rx.Component):
     arrows: bool = False
     fade: bool = True
     is_default = True
-    slides_to_show: int = 3,
-    slides_to_scroll: int = 3
+    slides_to_show: int = 1
+    slides_to_scroll: int = 1
     autoplay: bool = True
     autoplaySpeed: int = 4000
     pause_on_hover: bool = True
@@ -71,41 +71,37 @@ def development_card(text, text1, text2, src) -> rx.Component:
         ),
         width="100%",
     )
-
-def development_card_mobile(text, text1, text2) -> rx.Component:
+    
+def development_card_vertical(text, text1, text2) -> rx.Component:
     return rx.box(
         rx.flex(
             rx.box(
-                rx.text(text, size="9", style=styles.other_titles),
+                rx.text(text, size="9",),
                 rx.text(
                     text1,
                     size="4",
                     as_="p",
-                    padding="10px",
-                    style={
-                        'text_align': 'justify'
-                    }                
+                    padding_rigth="10px",
+                    style={'text_align': 'justify'}
                 ),
                 rx.text(
                     text2,
                     size="4",
                     as_="p",
-                    padding="10px",
-                    style={
-                        'text_align': 'justify'
-                    }                
+                    padding_rigth="10px",
+                    style={'text_align': 'justify'}
                 ),
-                width="10%",  # Define el ancho del texto
+                width="100%",  # Full width for the text
             ),
-            #direction="column",
+            direction="column",  # Change direction to column
             gap="4px",
-            align="start",
-            justify="start",
+            align="center",
+            justify="center",
         ),
-        width="30%"
+        width="100%",
     )
 
-
+    
 class ClickState(rx.State):
     cursor = "grab"
 
@@ -170,26 +166,26 @@ def que_ofrecemos() -> rx.Component:
         on_mouse_up=ClickState.change_cursor,
         width="95%",
     )
-    
-def que_ofrecemos_mobile() -> rx.Component:
+
+def que_ofrecemos_vertical() -> rx.Component:
     return rx.box(
         slick(
-            development_card_mobile(
+            development_card_vertical(
                 """• Visitas guiadas a bodegas •""",
                 """Te invitamos a nuestras exclusivas visitas guiadas a las bodegas más hermosas de la provincia. Sumérgete en los viñedos más prestigiosos, 
                 aprende sobre el proceso de elaboración del vino y disfruta de degustaciones exclusivas maridadas con delicias locales.""", 
                 """Mendoza ofrece un entorno inigualable para una experiencia enoturística. No solo te sumergirás en la cultura del vino, 
                 sino que también disfrutarás de la calidez de su gente y la belleza de sus paisajes. Cada visita es una oportunidad para vivir 
                 momentos memorables.""",
-                ),
-            development_card_mobile(
+            ),
+            development_card_vertical(
                 """• Cata de vinos exclusiva •""",
                 """Organizamos catas de vinos dirigidas por los mejores y más expertos enólogos y sommeliers, que permiten a nuestros turistas explorar una amplia 
                 gama de vinos locales y descubrir nuevas variedades y estilos.""", 
                 """Las catas se llevan a cabo en entornos totalmente innovadores, como bodegas históricas, salas de degustación con vistas panorámicas 
                 y encantadores patios al aire libre.""",
-                ),
-            development_card_mobile(
+            ),
+            development_card_vertical(
                 """• Recorridos por Viñedos •""",
                 """Ofrecemos a los visitantes la oportunidad de sumergirse en la belleza natural de los paisajes vinícolas mendocinos, 
                 mientras aprenden sobre las diferentes variedades de uva cultivadas en la región. Los participantes tienen la oportunidad de interactuar con 
@@ -197,8 +193,8 @@ def que_ofrecemos_mobile() -> rx.Component:
                 """Además, podrán disfrutar de la hospitalidad mendocina y degustar productos locales frescos directamente de la fuente.
                 Cada recorrido está diseñado para ser educativo y entretenido, proporcionando una comprensión profunda de la historia y la cultura vinícola 
                 de Mendoza.""",
-                ),
-            development_card_mobile(
+            ),
+            development_card_vertical(
                 """• Gastronomía Local •""",
                 """Enriquecemos nuestras experiencias vinícolas con exquisitas degustaciones de la gastronomía local. Nuestros eventos incluyen maridajes de vinos 
                 con una selección de platos tradicionales y gourmet que resaltan lo mejor de la región. En colaboración con chefs locales y 
@@ -206,15 +202,15 @@ def que_ofrecemos_mobile() -> rx.Component:
                 """Cada evento se celebra en un ambiente acogedor y elegante, variando desde patios al aire libre hasta bodegas históricas. 
                 Nuestros sommeliers expertos están siempre disponibles para guiar a los participantes a través de la experiencia de maridaje, explicando cómo 
                 cada vino complementa y realza los sabores de los platos.""",
-                ),
-            development_card_mobile(
+            ),
+            development_card_vertical(
                 """• Actividades Especiales •""",
                 """Además ofrecemos una amplia variedad de actividades especiales. 
                 Desde emocionantes paseos en globo aerostático sobre los viñedos hasta clases de cocina con temática de vino y talleres de elaboración de vinos, 
                 hay algo para cada gusto. También puedes participar en excursiones en bicicleta por los viñedos y explorar lugares históricos y culturales cercanos.""", 
                 """Estas experiencias te permiten sumergirte aún más en la cultura del vino y disfrutar de la belleza de la región mientras aprendes sobre 
                 prácticas de cultivo sostenible y viticultura orgánica de la mano de viticultores locales.""",
-                ),            
+            ),            
         ),
         on_mouse_down=ClickState.change_cursor,
         on_mouse_up=ClickState.change_cursor,
