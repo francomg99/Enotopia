@@ -1,14 +1,15 @@
 import reflex as rx
 from Eno.styles.styles import Size, Font, TextColor
-from Eno.components.title import title, others_titles
+from Eno.components.title import others_titles
 from Eno.components.wine_line import wine_line
-from Eno.components.carrusel import que_ofrecemos, que_ofrecemos_vertical
+from Eno.components.carrusel_blog import carousel_title
+from Eno.components.carrusel import que_ofrecemos
 import Eno.styles.styles as styles
 
 def quienes_somos_desktop()->rx.Component:
     return rx.tablet_and_desktop(
+                carousel_title("¿QUIÉNES SOMOS?", "/cartel.jpg", "center center"),
                 rx.vstack( 
-                    title("¿QUIÉNES SOMOS?"),
                 rx.text(
                     """
                     Somos una agencia especializada en ofrecer experiencias auténticas y enriquecedoras en el mundo del vino. 
@@ -16,9 +17,10 @@ def quienes_somos_desktop()->rx.Component:
                     nuestros clientes en la cultura del vino de una manera inolvidable.
                     Como apasionados del turismo y amantes del vino, hemos combinado nuestras dos pasiones para ofrecerles 
                     una experiencia única y memorable.""",
+                    padding_top=Size.BIG.value,
                     padding_right=[Size.VERY_BIG.value],
                     padding_left=Size.VERY_BIG.value,
-                    padding_bottom=Size.SMALL.value,
+                    padding_bottom=Size.BIG.value,
                     style={
                         "font_size": Size.LETTER.value,
                         'text_align': 'justify'
@@ -100,7 +102,6 @@ def quienes_somos_desktop()->rx.Component:
 def quienes_somos_mobile() -> rx.Component:
     return rx.mobile_only(
         rx.vstack(
-            title("¿QUIÉNES SOMOS?"),
             rx.text(
                 """
                 Somos una agencia especializada en ofrecer experiencias auténticas y enriquecedoras en el mundo del vino. 

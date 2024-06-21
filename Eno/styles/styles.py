@@ -9,8 +9,8 @@ class Size(Enum):
     LETTER = "1.1em"
     DEFAULT = "1.5em"
     BIG = "2em"
-    METHOD_TITLE="2.5em"
-    TITLE= "4.2em"
+    METHOD_TITLE="2.3em"
+    TITLE= "4em"
     BUTTON = "3em"
     VERY_BIG = "4em"
     

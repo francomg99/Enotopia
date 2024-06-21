@@ -3,14 +3,27 @@ from Eno.styles.styles import Size
 from Eno.styles.styles import Size
 from Eno.styles.fonts import Font
 from Eno.styles.colors import TextColor
-from Eno.components.title import title
+from Eno.components.carrusel_blog import carousel_title
 from Eno.components.wine_line import other_line
 from Eno.components.blog import blog, mobile_blog
 
 def blog_desktop() -> rx.Component:
     return rx.tablet_and_desktop(
-        title("BLOG"),
+        carousel_title("BLOG", "/blog.jpg", "center bottom"),
         rx.vstack(
+                rx.text(
+                    """
+                    ¡Bienvenidos a la tierra del vino en Mendoza! En nuestra región, cada terruño cuenta una historia única, 
+                    reflejada en los vinos que producimos. Explora y vive con nosotros los distintos terroirs que hacen de Mendoza un 
+                    destino vinícola de renombre mundial.""",
+                    padding_top=Size.BIG.value,
+                    padding_right=[Size.VERY_BIG.value],
+                    padding_left=Size.VERY_BIG.value,
+                    padding_bottom=Size.BIG.value,
+                    style={
+                        "font_size": Size.LETTER.value
+                        }
+                ),
             rx.box(
             rx.center(
                 "• Explora los Diversos Terroirs de Mendoza: Luján de Cuyo, Maipú y Valle de Uco •", 
@@ -32,19 +45,6 @@ def blog_desktop() -> rx.Component:
                 padding_y=["5em","3em"],
                 top="0"
                 ),
-                ),
-                rx.text(
-                    """
-                    ¡Bienvenidos a la tierra del vino en Mendoza! En nuestra región, cada terruño cuenta una historia única, 
-                    reflejada en los vinos que producimos. Explora y vive con nosotros los distintos terroirs que hacen de Mendoza un 
-                    destino vinícola de renombre mundial.""",
-                    padding_top=Size.BIG.value,
-                    padding_right=[Size.VERY_BIG.value],
-                    padding_left=Size.VERY_BIG.value,
-                    padding_bottom=Size.BIG.value,
-                    style={
-                        "font_size": Size.LETTER.value
-                        }
                 ),
                 rx.vstack(
                     rx.vstack(
@@ -129,7 +129,7 @@ def blog_desktop() -> rx.Component:
     
 def blog_mobile() -> rx.Component:
     return rx.mobile_only(
-        title("BLOG"),
+        carousel_title("BLOG", "maridar.jpeg", "center center"),
         rx.vstack(
             rx.box(
         rx.center(

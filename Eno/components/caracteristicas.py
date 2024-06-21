@@ -42,15 +42,15 @@ def caracteristicas(title, text, title1, text1, title2, text2, src):
                     text1,
                     align="right",
                     weight="light",
-                    style={**text_style, 'text_align': 'right'},
+                    style={**text_style, 'text_align': 'justify'},
                     width="100%"
                 ),
                 style={
                     "position": "absolute",
                     "top": "50%",
                     "right": "5%",
-                    "width": "33%",
-                    "transform": "translateY(-50%)",
+                    "width": "35%",
+                    "transform": "translateY(-60%)",
                     "z_index": "1"
                 }
             ),
@@ -82,7 +82,7 @@ def caracteristicas(title, text, title1, text1, title2, text2, src):
                 "z_index": "0"  # Fondo detrás del texto
             },
             width="100%",
-            height="37em",
+            height="30em",
             display="flex",
             spacing="4",
             padding_x=["1em", "3em"],

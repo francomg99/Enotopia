@@ -4,6 +4,13 @@ from Eno.styles.fonts import Font
 from Eno.styles.colors import Color, TextColor
 
 def header_with_image_and_text():
+    # Definir las animaciones
+    slide_in_keyframes = {
+        "0%": {"transform": "translateX(-20px)"},
+        "100%": {"transform": "translateX(0)"}
+    }
+
+    # Aplicar la animación a los elementos
     return rx.hstack(
         rx.box(
             rx.text(
@@ -15,7 +22,8 @@ def header_with_image_and_text():
                 color=TextColor.ACCENT.value,
                 font_family=Font.TITLE.value,
                 style={
-                    'font_size':["4em","4.5em"]
+                    'font_size': ["4em", "4.5em"],
+                    'animation': 'slideIn 1s ease-out forwards'
                 }
             ),
             rx.text(
@@ -27,7 +35,8 @@ def header_with_image_and_text():
                 color=TextColor.ACCENT.value,
                 font_family=Font.TITLE.value,
                 style={
-                    'font_size':["4em","4.5em"]
+                    'font_size': ["4em", "4.5em"],
+                    'animation': 'slideIn 1s ease-out forwards'
                 }
             ),            
             rx.chakra.link(
@@ -41,25 +50,33 @@ def header_with_image_and_text():
                     _hover={
                         "background": Color.TERTIARY.value,
                         "color": TextColor.PRIMARY.value
-                    },                  
-                    ),
-                    href="/reservas",
+                    },
+                    style={
+                        'animation': 'slideIn 1s ease-out forwards'
+                    }                
+                ),
+                href="/reservas",
             ),
-                style={
-                "background": f"linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('/montaña.jpg')",
+            style={
+                "background": "url('/montaña.jpg')",
                 "background_size": "cover",  # Ajustar el tamaño de fondo
                 "background_position": "center",  # Centrar la imagen de fondo
                 "padding": "20px",
                 "position": "relative",
-                "z_index": "0"  # Fondo detrás del texto
-                },                
-                align_items="center",
-                spacing="4",
-                width="100%",
-                height=["25em","32em"],
-                padding_x=["1.5em","3em"],
-                padding_y=["5em","10em"],
-                top="0"
-                ),
+                "z_index": "0",  # Fondo detrás del texto
+                'animation': 'slideIn 1s ease-out forwards'
+            },
+            align_items="center",
+            spacing="4",
+            width="100%",
+            height=["25em", "32em"],
+            padding_x=["1.5em", "3em"],
+            padding_y=["5em", "10em"],
+            top="0"
+        ),
+        style={
+            '@keyframes slideIn': slide_in_keyframes
+        }
     )
+
 

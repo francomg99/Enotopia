@@ -59,7 +59,7 @@ def blog(src: str,text: str, url:str) -> rx.Component:
             rx.hstack(
                 rx.image(
                     src=src,
-                    width="45%",
+                    width="40%",
                     height="auto",
                     _hover={"opacity": 0.8},
                 ),

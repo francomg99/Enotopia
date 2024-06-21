@@ -8,30 +8,30 @@ from Eno.components.vinos import vinos
 
 # Definir la clase de estado con los datos del gráfico de pastel
 data1 = [
-    {"subject": "Acidez", "A": 80, "fullMark": 100},
-    {"subject": "Cuerpo", "A": 70, "fullMark": 100},
-    {"subject": "Taninos", "A": 86, "fullMark": 100},
-    {"subject": "Aroma", "A": 90, "fullMark": 100},
-    {"subject": "Equilibrio", "A": 85, "fullMark": 100},
-    {"subject": "Alcohol", "A": 90, "fullMark": 100},
+    {"subject": "Acidez", "Vinos": 80, "fullMark": 100},
+    {"subject": "Cuerpo", "Vinos": 70, "fullMark": 100},
+    {"subject": "Taninos", "Vinos": 86, "fullMark": 100},
+    {"subject": "Aroma", "Vinos": 90, "fullMark": 100},
+    {"subject": "Equilibrio", "Vinos": 85, "fullMark": 100},
+    {"subject": "Alcohol", "Vinos": 90, "fullMark": 100},
 ]
 
 data2 = [
-    {"subject": "Acidez", "A": 60, "fullMark": 100},
-    {"subject": "Cuerpo", "A": 75, "fullMark": 100},
-    {"subject": "Taninos", "A": 80, "fullMark": 100},
-    {"subject": "Aroma", "A": 85, "fullMark": 100},
-    {"subject": "Equilibrio", "A": 80, "fullMark": 100},
-    {"subject": "Alcohol", "A": 95, "fullMark": 100},
+    {"subject": "Acidez", "Vinos": 60, "fullMark": 100},
+    {"subject": "Cuerpo", "Vinos": 75, "fullMark": 100},
+    {"subject": "Taninos", "Vinos": 80, "fullMark": 100},
+    {"subject": "Aroma", "Vinos": 85, "fullMark": 100},
+    {"subject": "Equilibrio", "Vinos": 80, "fullMark": 100},
+    {"subject": "Alcohol", "Vinos": 95, "fullMark": 100},
 ]
 
 data3 = [
-    {"subject": "Acidez", "A": 40, "fullMark": 100},
-    {"subject": "Cuerpo", "A": 55, "fullMark": 100},
-    {"subject": "Taninos", "A": 90, "fullMark": 100},
-    {"subject": "Aroma", "A": 80, "fullMark": 100},
-    {"subject": "Equilibrio", "A": 70, "fullMark": 100},
-    {"subject": "Alcohol", "A": 95, "fullMark": 100},
+    {"subject": "Acidez", "Vinos": 40, "fullMark": 100},
+    {"subject": "Cuerpo", "Vinos": 55, "fullMark": 100},
+    {"subject": "Taninos", "Vinos": 90, "fullMark": 100},
+    {"subject": "Aroma", "Vinos": 80, "fullMark": 100},
+    {"subject": "Equilibrio", "Vinos": 70, "fullMark": 100},
+    {"subject": "Alcohol", "Vinos": 95, "fullMark": 100},
 ]
 
 @rx.page(
@@ -45,31 +45,34 @@ def maipu() -> rx.Component:
     return rx.box(
         navbar(),
         slick(
-            carousel_title("Maipú", "/uco1.jpg", "center"),
-            carousel_title("Maipu", "/uco2.jpg", "up"),
-            carousel_title("Maipu", "/uco3.jpg", "bottom")
-        ),
-        title("Caracteristicas de Maipú"),
+            carousel_title("Maipú", "/luigi.jpg", "center center"),
+            carousel_title("Maipu", "/flichman.jpg", "center center"),
+            carousel_title("Maipu", "/vigil1.jpg", "center center"),
+            carousel_title("Maipu", "/vigil2.jpg", "center center"),             
+            carousel_title("Maipu", "/vigil1.jpg", "center center") 
+            ),
+        title("Caracteristicas de esta región"),
         caracteristicas(
             "Clima",
-            """El clima es continental, con veranos cálidos y secos e inviernos fríos. 
-            La amplitud térmica diaria (diferencia de temperatura entre el día y la noche) 
-            es significativa, lo que ayuda a desarrollar mejor la acidez y los aromas de las uvas.""",
+            """Posee un clima semiárido con influencia continental. Sus veranos son cálidos (18°C - 35°C) 
+            y los inviernos frescos (hasta 0°C), con poca lluvia anual. Este clima intensifica los aromas y 
+            sabores de las uvas, y favorecen la salud de las plantas al reducir enfermedades.""",
             "Altitud",
-            """Las viñas se encuentran a altitudes que varían entre los 900 y 1.500 metros sobre el nivel del mar. 
-            Esta altura permite una mayor exposición solar y temperaturas más frescas, favoreciendo una maduración 
-            lenta y equilibrada de las uvas.""",
+            """Se encuentra entre 700 y 800 metros sobre el nivel del mar. Esta altitud moderada crea condiciones 
+            climáticas favorables. Durante el día, el sol intenso promueve la maduración de las uvas, mientras que 
+            las noches frescas preservan la acidez natural de las uvas, contribuyendo a vinos equilibrados y complejos.""",
             "Suelo",
-            """Los suelos del Valle de Uco son diversos, predominando los suelos aluviales con buen drenaje, 
-            lo que contribuye a la concentración y calidad de las uvas.""",
-            "/bodega.jpeg"           
+            """Los suelos aluviales, con buena retención de agua y drenaje adecuado, son ideales para variedades 
+            como Cabernet Sauvignon, Malbec, Merlot, Tempranillo, Chardonnay y Sauvignon Blanc, beneficiándose 
+            de un ciclo vegetativo prolongado y una tradición vitivinícola que realza su calidad.""",
+            "/bodega1.jpeg"           
         ),        
         title("Vinos"),
         vinos(
-            "Gran Enemigo 2019",
+            "Gran Enemigo - Cabernet Franc",
             "/enemigo.png",
             data1,
-            "Antigal - UNO",
+            "Antigal - Malbec",
             "/uno.png",
             data2,
             "Trapiche - Malbec",

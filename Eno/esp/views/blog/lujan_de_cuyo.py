@@ -8,30 +8,30 @@ from Eno.components.vinos import vinos
 from Eno.esp.views.footer import footer_desktop,footer_mobile
 
 data1 = [
-    {"subject": "Acidez", "A": 80, "fullMark": 100},
-    {"subject": "Cuerpo", "A": 70, "fullMark": 100},
-    {"subject": "Taninos", "A": 86, "fullMark": 100},
-    {"subject": "Aroma", "A": 90, "fullMark": 100},
-    {"subject": "Equilibrio", "A": 85, "fullMark": 100},
-    {"subject": "Alcohol", "A": 90, "fullMark": 100},
+    {"subject": "Acidez", "Vinos": 80, "fullMark": 100},
+    {"subject": "Cuerpo", "Vinos": 70, "fullMark": 100},
+    {"subject": "Taninos", "Vinos": 86, "fullMark": 100},
+    {"subject": "Aroma", "Vinos": 90, "fullMark": 100},
+    {"subject": "Equilibrio", "Vinos": 85, "fullMark": 100},
+    {"subject": "Alcohol", "Vinos": 90, "fullMark": 100},
 ]
 
 data2 = [
-    {"subject": "Acidez", "A": 60, "fullMark": 100},
-    {"subject": "Cuerpo", "A": 75, "fullMark": 100},
-    {"subject": "Taninos", "A": 80, "fullMark": 100},
-    {"subject": "Aroma", "A": 85, "fullMark": 100},
-    {"subject": "Equilibrio", "A": 80, "fullMark": 100},
-    {"subject": "Alcohol", "A": 95, "fullMark": 100},
+    {"subject": "Acidez", "Vinos": 60, "fullMark": 100},
+    {"subject": "Cuerpo", "Vinos": 75, "fullMark": 100},
+    {"subject": "Taninos", "Vinos": 80, "fullMark": 100},
+    {"subject": "Aroma", "Vinos": 85, "fullMark": 100},
+    {"subject": "Equilibrio", "Vinos": 80, "fullMark": 100},
+    {"subject": "Alcohol", "Vinos": 95, "fullMark": 100},
 ]
 
 data3 = [
-    {"subject": "Acidez", "A": 40, "fullMark": 100},
-    {"subject": "Cuerpo", "A": 55, "fullMark": 100},
-    {"subject": "Taninos", "A": 90, "fullMark": 100},
-    {"subject": "Aroma", "A": 80, "fullMark": 100},
-    {"subject": "Equilibrio", "A": 70, "fullMark": 100},
-    {"subject": "Alcohol", "A": 95, "fullMark": 100},
+    {"subject": "Acidez", "Vinos": 40, "fullMark": 100},
+    {"subject": "Cuerpo", "Vinos": 55, "fullMark": 100},
+    {"subject": "Taninos", "Vinos": 90, "fullMark": 100},
+    {"subject": "Aroma", "Vinos": 80, "fullMark": 100},
+    {"subject": "Equilibrio", "Vinos": 70, "fullMark": 100},
+    {"subject": "Alcohol", "Vinos": 95, "fullMark": 100},
 ]
 
 @rx.page(
@@ -47,33 +47,30 @@ def lujan_de_cuyo() -> rx.Component:
         slick(
             carousel_title("Luján de Cuyo", "/decero.jpg", "center center"),
             carousel_title("Luján de Cuyo", "/cobos.jpg", "center center"),
-            carousel_title("Luján de Cuyo", "/penedo.jpg", "center center")
-        ),
-        title("Caracteristicas de Luján de Cuyo"),
+            carousel_title("Luján de Cuyo", "/penedo.jpg", "center center"),
+            carousel_title("Luján de Cuyo", "/balbo.jpg", "center center"),
+            carousel_title("Luján de Cuyo", "/bressia.jpg", "center center"),        
+            ),
+        title("Caracteristicas de esta región"),
         caracteristicas(
             "Clima",
-            """El clima es continental, con veranos cálidos y secos e inviernos fríos. 
-            La amplitud térmica diaria (diferencia de temperatura entre el día y la noche) 
-            es significativa, lo que ayuda a desarrollar mejor la acidez y los aromas de las uvas.""",
+            """Luján de Cuyo tiene un clima semiárido ideal para la viticultura, con veranos calurosos (18°C a 33°C) e inviernos frescos (3°C a 15°C) y una marcada amplitud térmica diaria. La baja precipitación anual, concentrada en verano, permite un control preciso del riego.""",
             "Altitud",
-            """Las viñas se encuentran a altitudes que varían entre los 900 y 1.500 metros sobre el nivel del mar. 
-            Esta altura permite una mayor exposición solar y temperaturas más frescas, favoreciendo una maduración 
-            lenta y equilibrada de las uvas.""",
+            """Se sitúa entre los 900 y 1100 msnm, lo que genera una amplitud térmica diaria favorable para una maduración fenólica equilibrada de las uvas. La intensa radiación solar mejora la calidad y el color de los vinos, produciendo Malbec con acidez balanceada, buena estructura y excelente potencial de envejecimiento.""",
             "Suelo",
-            """Los suelos del Valle de Uco son diversos, predominando los suelos aluviales con buen drenaje, 
-            lo que contribuye a la concentración y calidad de las uvas.""",
-            "/bodega.jpeg"           
+            """Los suelos de Luján de Cuyo son aluviales, compuestos por una mezcla de arena, limo y arcilla, con abundante grava y piedras que aseguran un buen drenaje. La presencia de minerales como calcio y magnesio mejora la salud de la vid y la calidad del fruto.""",
+            "/bodega3.jpeg"           
         ),
         title("Vinos"),
         vinos(
-            "Gran Enemigo 2019",
-            "/enemigo.png",
+            "DV Catena - Malbec Malbec",
+            "/catena.png",
             data1,
-            "Antigal - UNO",
-            "/uno.png",
+            "Bressia - Lagrima de Canela",
+            "/bressia.png",
             data2,
-            "Trapiche - Malbec",
-            "/trapiche.png",
+            "Guarda - Malbec",
+            "/guarda.png",
             data3
             ),
         other_line(),

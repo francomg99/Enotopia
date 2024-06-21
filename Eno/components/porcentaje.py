@@ -4,7 +4,7 @@ import reflex as rx
 def porcentajes(data):
     return rx.recharts.radar_chart(
         rx.recharts.radar(
-            data_key="A",
+            data_key="Vinos",
             stroke="#dcb32a",
             fill="#1c0911",
         ),

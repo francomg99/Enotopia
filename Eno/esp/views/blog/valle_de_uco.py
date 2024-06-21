@@ -7,30 +7,30 @@ from Eno.components.title import title
 from Eno.components.vinos import vinos
 
 data1 = [
-    {"subject": "Acidez", "A": 80, "fullMark": 100},
-    {"subject": "Cuerpo", "A": 70, "fullMark": 100},
-    {"subject": "Taninos", "A": 86, "fullMark": 100},
-    {"subject": "Aroma", "A": 90, "fullMark": 100},
-    {"subject": "Equilibrio", "A": 85, "fullMark": 100},
-    {"subject": "Alcohol", "A": 90, "fullMark": 100},
+    {"subject": "Acidez", "Vinos": 80, "fullMark": 100},
+    {"subject": "Cuerpo", "Vinos": 70, "fullMark": 100},
+    {"subject": "Taninos", "Vinos": 86, "fullMark": 100},
+    {"subject": "Aroma", "Vinos": 90, "fullMark": 100},
+    {"subject": "Equilibrio", "Vinos": 85, "fullMark": 100},
+    {"subject": "Alcohol", "Vinos": 90, "fullMark": 100},
 ]
 
 data2 = [
-    {"subject": "Acidez", "A": 60, "fullMark": 100},
-    {"subject": "Cuerpo", "A": 75, "fullMark": 100},
-    {"subject": "Taninos", "A": 80, "fullMark": 100},
-    {"subject": "Aroma", "A": 85, "fullMark": 100},
-    {"subject": "Equilibrio", "A": 80, "fullMark": 100},
-    {"subject": "Alcohol", "A": 95, "fullMark": 100},
+    {"subject": "Acidez", "Vinos": 60, "fullMark": 100},
+    {"subject": "Cuerpo", "Vinos": 75, "fullMark": 100},
+    {"subject": "Taninos", "Vinos": 80, "fullMark": 100},
+    {"subject": "Aroma", "Vinos": 85, "fullMark": 100},
+    {"subject": "Equilibrio", "Vinos": 80, "fullMark": 100},
+    {"subject": "Alcohol", "Vinos": 95, "fullMark": 100},
 ]
 
 data3 = [
-    {"subject": "Acidez", "A": 40, "fullMark": 100},
-    {"subject": "Cuerpo", "A": 55, "fullMark": 100},
-    {"subject": "Taninos", "A": 90, "fullMark": 100},
-    {"subject": "Aroma", "A": 80, "fullMark": 100},
-    {"subject": "Equilibrio", "A": 70, "fullMark": 100},
-    {"subject": "Alcohol", "A": 95, "fullMark": 100},
+    {"subject": "Acidez", "Vinos": 40, "fullMark": 100},
+    {"subject": "Cuerpo", "Vinos": 55, "fullMark": 100},
+    {"subject": "Taninos", "Vinos": 90, "fullMark": 100},
+    {"subject": "Aroma", "Vinos": 80, "fullMark": 100},
+    {"subject": "Equilibrio", "Vinos": 70, "fullMark": 100},
+    {"subject": "Alcohol", "Vinos": 95, "fullMark": 100},
 ]
 
 @rx.page(
@@ -44,11 +44,13 @@ def valle_de_uco() -> rx.Component:
     return rx.box(
         navbar(),
         slick(
-            carousel_title("Valle de Uco", "/uco1.jpg", "center"),
-            carousel_title("Vale do Uco", "/uco2.jpg", "up"),
-            carousel_title("Uco Valley", "/uco3.jpg", "bottom")
+            carousel_title("Valle de Uco", "/diamandes2.jpg", "center"),
+            carousel_title("Vale do Uco", "/alfa.jpg", "center"),
+            carousel_title("Uco Valley", "/zuccardi.jpg", "center"),
+            carousel_title("Uco Valley", "/monteviejo2.jpeg", "center"),
+            carousel_title("Uco Valley", "/salentein3.jpg", "center")
         ),
-        title("Caracteristicas del Valle de Uco"),
+        title("Caracteristicas de esta región"),
         caracteristicas(
             "Clima",
             """El clima es continental, con veranos cálidos y secos e inviernos fríos. 
@@ -61,18 +63,18 @@ def valle_de_uco() -> rx.Component:
             "Suelo",
             """Los suelos del Valle de Uco son diversos, predominando los suelos aluviales con buen drenaje, 
             lo que contribuye a la concentración y calidad de las uvas.""",
-            "/bodega.jpeg"           
+            "/bodega2.jpeg"           
         ),
         title("Vinos"),
         vinos(
-            "Gran Enemigo 2019",
-            "/enemigo.png",
+            "Salentein - SP Los Jabalíes - Malbec",
+            "/salentein.png",
             data1,
-            "Antigal - UNO",
-            "/uno.png",
+            "Zuccardi - Aluvional Malbec",
+            "/aluvional.png",
             data2,
-            "Trapiche - Malbec",
-            "/trapiche.png",
+            "Rutini - Malbec",
+            "/rutini.png",
             data3
             ),
         other_line(),

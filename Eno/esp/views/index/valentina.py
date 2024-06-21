@@ -1,7 +1,7 @@
 import reflex as rx
 from Eno.styles.styles import Size, TextColor, Color
 from Eno.components.title import title, others_titles
-from Eno.components.blog import blog
+from reflex_image_zoom import ImageZoom
 
 def enotopia_desktop() -> rx.Component:
     return rx.tablet_and_desktop(
