@@ -11,7 +11,7 @@ def foto_ig()-> rx.Component:
                     rx.avatar(
                         name="Enotopía",
                         size="9",
-                        src="/vale.jpg",
+                        src="/enotopia_violeta.png",
                         radius="full",
                         color=TextColor.SECONDARY.value,
                         bg=Color.ACCENT.value,

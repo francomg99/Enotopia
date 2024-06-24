@@ -127,7 +127,7 @@ def wine_menu_mobile():
             <lord-icon
                 src="https://cdn.lordicon.com/dabfbizw.json"
                 trigger="hover"
-                style="width:70px;height:70px">
+                style="width:69px;height:69px">
             </lord-icon>"""
                 ),            on_click=DrawerState.toggle_menu, 
             size="lg", 

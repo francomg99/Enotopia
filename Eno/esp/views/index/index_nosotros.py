@@ -29,7 +29,7 @@ def quienes_somos_desktop()->rx.Component:
                 rx.chakra.responsive_grid(
                     rx.box(
                         rx.image(
-                            src="/cava_salentein.jpg",
+                            src="/salentein2.jpg",
                             alt="Imagén en montaña de Bodegas Salentein",
                             widht="98%",
                             height=["auto","auto"],

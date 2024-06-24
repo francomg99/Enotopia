@@ -48,8 +48,7 @@ def maipu() -> rx.Component:
             carousel_title("Maipú", "/luigi.jpg", "center center"),
             carousel_title("Maipu", "/flichman.jpg", "center center"),
             carousel_title("Maipu", "/vigil1.jpg", "center center"),
-            carousel_title("Maipu", "/vigil2.jpg", "center center"),             
-            carousel_title("Maipu", "/vigil1.jpg", "center center") 
+            #carousel_title("Maipu", "/vigil2.jpg", "center center"),             
             ),
         title("Caracteristicas de esta región"),
         caracteristicas(
