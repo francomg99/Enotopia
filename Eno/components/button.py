@@ -34,5 +34,7 @@ def other_button (text:str, url:str) -> rx.Component:
                 "color": TextColor.SECONDARY.value
             },  
             size="md",
-            margin=Size.SMALL.value
+            margin_rigth=Size.SMALL.value,
+            margin_top=Size.MEDIUM.value,
+            margin_bottom=Size.SMALL.value
     )

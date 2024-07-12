@@ -7,7 +7,7 @@ def footer_desktop()->rx.Component:
                 rx.image(
                     src="/enotopia.png",
                     alt="Logo de Enotopia, palabra encerrada en las esquinas",
-                    width="20em"
+                    width="15em"
                 ),
                 rx.text(
                     "©Pagina creada por Franco Martínez - Reflex | Python",

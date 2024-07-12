@@ -124,13 +124,12 @@ def wine_menu_mobile():
         rx.chakra.button(
             rx.html(
                 """<script src="https://cdn.lordicon.com/lordicon.js"></script>
-                    <lord-icon
-                        src="https://cdn.lordicon.com/wnacayju.json"
-                        trigger="hover"
-                        style="width:70px;height:70px">
-                    </lord-icon>"""
-                ),            
-            on_click=DrawerState.toggle_menu, 
+            <lord-icon
+                src="https://cdn.lordicon.com/dabfbizw.json"
+                trigger="hover"
+                style="width:70px;height:70px">
+            </lord-icon>"""
+                ),            on_click=DrawerState.toggle_menu, 
             size="lg", 
             bg=Color.CUARTIARY.value, 
             _hover={

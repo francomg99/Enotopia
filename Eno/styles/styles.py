@@ -7,7 +7,7 @@ class Size(Enum):
     SMALL = "0.5em"
     MEDIUM = "1em"
     LETTER = "1.1em"
-    DEFAULT = "1.5em"
+    DEFAULT = "1.2em"
     BIG = "2em"
     METHOD_TITLE="2.3em"
     TITLE= "4em"
