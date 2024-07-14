@@ -16,10 +16,10 @@ def quienes_somos()->rx.Component:
         navbar(),
         quienes_somos_desktop(),
         quienes_somos_mobile(),
-        wine_line(),
+        other_line(),
         enotopia_mobile(),
         enotopia_desktop(),
-        wine_line(),       
+        other_line(),       
         footer_desktop(),
         footer_mobile()
         )

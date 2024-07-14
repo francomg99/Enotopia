@@ -2,9 +2,10 @@ import reflex as rx
 from Eno.esp.views.navbar import navbar
 from Eno.components.carrusel_blog import carousel_title, slick
 from Eno.components.caracteristicas import caracteristicas 
-from Eno.components.wine_line import other_line
+from Eno.components.wine_line import other_line, footer_line
 from Eno.components.title import title
 from Eno.components.vinos import vinos
+from Eno.esp.views.footer import footer_desktop,footer_mobile
 
 data1 = [
     {"subject": "Acidez", "Vinos": 80, "fullMark": 100},
@@ -50,7 +51,7 @@ def valle_de_uco() -> rx.Component:
             carousel_title("Uco Valley", "/monteviejo2.jpeg", "center"),
             carousel_title("Uco Valley", "/salentein3.jpg", "center")
         ),
-        title("Caracteristicas de esta región"),
+        title("Caracteristicas"),
         caracteristicas(
             "Clima",
             """El clima es continental, con veranos cálidos y secos e inviernos fríos. 
@@ -78,6 +79,8 @@ def valle_de_uco() -> rx.Component:
             data3
             ),
         other_line(),
-        other_line(),
+        footer_desktop(),
+        footer_mobile(),
+        footer_line(),
         width="100%"
     )

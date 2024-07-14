@@ -11,11 +11,11 @@ def foto_ig()-> rx.Component:
                     rx.avatar(
                         name="Enotopía",
                         size="9",
-                        src="/enotopia_violeta.png",
+                        src="/enotopia_amarillo.png",
                         radius="full",
                         color=TextColor.SECONDARY.value,
                         bg=Color.ACCENT.value,
-                        border=f"4px solid {Color.TERTIARY.value}",
+                        border=f"4px solid {Color.CUARTIARY.value}",
                         _hover={
                             "opacity": 0.8,
                         }
@@ -38,7 +38,7 @@ def foto_ig()-> rx.Component:
                     rx.hstack(
                         other_button(
                             "Seguir",
-                            "https://www.instagram.com/valentinamartinez2/"
+                            "https://www.instagram.com/enotopia_/"
                         )
                     ),
                 spacing="0",

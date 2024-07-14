@@ -2,7 +2,7 @@ import reflex as rx
 from Eno.esp.views.navbar import navbar
 from Eno.components.carrusel_blog import carousel_title, slick
 from Eno.components.caracteristicas import caracteristicas 
-from Eno.components.wine_line import other_line
+from Eno.components.wine_line import other_line, footer_line
 from Eno.components.title import title
 from Eno.components.vinos import vinos
 from Eno.esp.views.footer import footer_desktop,footer_mobile
@@ -51,7 +51,7 @@ def lujan_de_cuyo() -> rx.Component:
             carousel_title("Luján de Cuyo", "/balbo.jpg", "center center"),
             carousel_title("Luján de Cuyo", "/bressia.jpg", "center center"),        
             ),
-        title("Caracteristicas de esta región"),
+        title("Caracteristicas"),
         caracteristicas(
             "Clima",
             """Luján de Cuyo tiene un clima semiárido ideal para la viticultura, con veranos calurosos (18°C a 33°C) e inviernos frescos (3°C a 15°C) y una marcada amplitud térmica diaria. La baja precipitación anual, concentrada en verano, permite un control preciso del riego.""",
@@ -74,7 +74,8 @@ def lujan_de_cuyo() -> rx.Component:
             data3
             ),
         other_line(),
-        footer_mobile(),
         footer_desktop(),
+        footer_mobile(),
+        footer_line(),
         width="100%"
     )

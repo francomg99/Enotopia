@@ -1,7 +1,7 @@
 import reflex as rx
 from Eno.esp.views.navbar import navbar
 from Eno.components.contact import contact_and_title
-from Eno.components.wine_line import wine_line
+from Eno.components.wine_line import footer_line, other_line
 from Eno.esp.views.footer import footer_desktop, footer_mobile
 
 @rx.page(
@@ -13,7 +13,8 @@ def reservas() -> rx.Component:
     return rx.box(
         navbar(),
         contact_and_title(), # Puedes habilitar esta línea si es necesario
-        wine_line(),
+        other_line(),
         footer_desktop(),
-        footer_mobile()
+        footer_mobile(),
+        footer_line(),
     )

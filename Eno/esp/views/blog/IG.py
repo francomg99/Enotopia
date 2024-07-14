@@ -3,7 +3,8 @@ from Eno.esp.views.navbar import navbar
 from Eno.esp.views.footer import footer_desktop
 from Eno.components.carrusel_blog import carousel_title, slick
 from Eno.components.title import title
-from Eno.components.wine_line import wine_line, other_line
+from Eno.components.wine_line import footer_line, other_line
+from Eno.esp.views.footer import footer_desktop, footer_mobile
 from Eno.components.ind_geo import ind_geo
 from Eno.styles.styles import Size
 import Eno.styles.styles as styles
@@ -30,9 +31,9 @@ def indicacion_geo():
             rx.text(
                 """
                 Las Indicaciones Geográficas (IG) son una faceta fascinante y a menudo desconocida del mundo de la protección de productos regionales. Este sistema no solo protege contra la falsificación y el uso indebido de nombres geográficos, sino que también tiene aspectos curiosos y únicos:""",
-                padding_top=Size.MEDIUM.value,
-                padding_right=[Size.VERY_BIG.value],
-                padding_left=Size.VERY_BIG.value,
+                padding_top=["0em",Size.MEDIUM.value],
+                padding_right=[Size.SMALL, Size.VERY_BIG.value],
+                padding_left=[Size.SMALL, Size.VERY_BIG.value],
                 padding_bottom=Size.SMALL.value,
                 style=text_style
             ),  
@@ -40,8 +41,8 @@ def indicacion_geo():
                 rx.text.strong("• Orígenes en el Vino:", font_size=Size.DEFAULT.value),
                 """
                 Las IG comenzaron originalmente en la industria del vino en Europa como una forma de proteger las denominaciones de origen como Champagne, Chianti, y Porto. Esto aseguró que solo los vinos producidos en esas regiones específicas pudieran llevar esos nombres.""",
-                padding_right=[Size.VERY_BIG.value],
-                padding_left=Size.VERY_BIG.value,
+                padding_right=[Size.SMALL, Size.VERY_BIG.value],
+                padding_left=[Size.SMALL, Size.VERY_BIG.value],
                 padding_bottom=Size.SMALL.value,
                 style=text_style
             ),             
@@ -49,8 +50,8 @@ def indicacion_geo():
                 rx.text.strong("৹ Protección de sabores: ", font_size=Size.DEFAULT.value),
                 """
                 En algunos casos, las IG no solo protegen nombres geográficos, sino también métodos tradicionales de producción y hasta ciertos perfiles de sabor característicos de un lugar.""",
-                padding_right=[Size.VERY_BIG.value],
-                padding_left=Size.VERY_BIG.value,
+                padding_right=[Size.SMALL, Size.VERY_BIG.value],
+                padding_left=[Size.SMALL, Size.VERY_BIG.value],
                 style=text_style
             ), 
             other_line(),
@@ -66,8 +67,8 @@ def indicacion_geo():
                 rx.text.strong("• Variedades Poco Conocidas: ", font_size=Size.DEFAULT.value),
                 """
                 Algunas IG protegen productos derivados de variedades de plantas o animales que son únicas de una región específica. Por ejemplo, el queso Roquefort en Francia se elabora con leche de ovejas de una raza particular y solo en ciertas cuevas de la región.""",
-                padding_right=[Size.VERY_BIG.value],
-                padding_left=Size.VERY_BIG.value,
+                padding_right=[Size.SMALL, Size.VERY_BIG.value],
+                padding_left=[Size.SMALL, Size.VERY_BIG.value],
                 padding_bottom=Size.SMALL.value,
                 style=text_style
             ),            
@@ -75,8 +76,8 @@ def indicacion_geo():
                 rx.text.strong("৹ Impacto Económico: ", font_size=Size.DEFAULT.value),
                 """
                 Las IG no solo protegen el patrimonio cultural y natural de una región, sino que también tienen un impacto significativo en la economía local al atraer turismo y valorizar los productos locales.""",
-                padding_right=[Size.VERY_BIG.value],
-                padding_left=Size.VERY_BIG.value,
+                padding_right=[Size.SMALL, Size.VERY_BIG.value],
+                padding_left=[Size.SMALL, Size.VERY_BIG.value],
                 style=text_style
             ),
             other_line(),
@@ -92,8 +93,8 @@ def indicacion_geo():
                 rx.text.strong("• Conflictos y Negociaciones Internacionales: ", font_size=Size.DEFAULT.value),
                 """
                A nivel global, las negociaciones sobre IG pueden ser intensas y complejas, especialmente en acuerdos comerciales internacionales donde se discute la protección de denominaciones de origen frente a intereses comerciales más amplios.""",
-                padding_right=[Size.VERY_BIG.value],
-                padding_left=Size.VERY_BIG.value,
+                padding_right=[Size.SMALL, Size.VERY_BIG.value],
+                padding_left=[Size.SMALL, Size.VERY_BIG.value],
                 padding_bottom=Size.SMALL.value,
                 style=text_style
             ),            
@@ -101,8 +102,8 @@ def indicacion_geo():
                 rx.text.strong("৹ Desafíos Tecnológicos: ", font_size=Size.DEFAULT.value),
                 """
                 Con el avance de la tecnología, la protección de las IG también debe adaptarse para prevenir el uso indebido en plataformas digitales y en el comercio electrónico global.""",
-                padding_right=[Size.VERY_BIG.value],
-                padding_left=Size.VERY_BIG.value,
+                padding_right=[Size.SMALL, Size.VERY_BIG.value],
+                padding_left=[Size.SMALL, Size.VERY_BIG.value],
                 style=text_style
             ), 
             other_line(),
@@ -129,12 +130,13 @@ def indicacion_geo():
                 Una IG no se inventa, se reconoce. Es parte de un sistema que garantiza que las características 
                 del producto sean auténticas y genuinas, transmitidas a través de generaciones y ligadas al 
                 conocimiento local compartido."""),
-                padding_right=[Size.VERY_BIG.value],
-                padding_left=Size.VERY_BIG.value,
+                padding_right=[Size.SMALL, Size.VERY_BIG.value],
+                padding_left=[Size.SMALL, Size.VERY_BIG.value],
                 padding_top=Size.SMALL.value,
                 font_size=Size.DEFAULT.value
             ),              
             other_line(),
             footer_desktop(),
-            other_line()      
+            footer_mobile(),
+            footer_line(),    
             )

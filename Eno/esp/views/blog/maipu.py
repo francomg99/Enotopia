@@ -2,9 +2,11 @@ import reflex as rx
 from Eno.esp.views.navbar import navbar
 from Eno.components.carrusel_blog import carousel_title, slick
 from Eno.components.caracteristicas import caracteristicas
-from Eno.components.wine_line import other_line
+from Eno.components.wine_line import other_line, footer_line
 from Eno.components.title import title
 from Eno.components.vinos import vinos
+from Eno.esp.views.footer import footer_desktop,footer_mobile
+
 
 # Definir la clase de estado con los datos del gráfico de pastel
 data1 = [
@@ -50,7 +52,7 @@ def maipu() -> rx.Component:
             carousel_title("Maipu", "/vigil1.jpg", "center center"),
             #carousel_title("Maipu", "/vigil2.jpg", "center center"),             
             ),
-        title("Caracteristicas de esta región"),
+        title("Caracteristicas"),
         caracteristicas(
             "Clima",
             """Posee un clima semiárido con influencia continental. Sus veranos son cálidos (18°C - 35°C) 
@@ -79,6 +81,8 @@ def maipu() -> rx.Component:
             data3
             ),
         other_line(),
-        other_line(),
+        footer_desktop(),
+        footer_mobile(),
+        footer_line(),
         width="100%"
     )

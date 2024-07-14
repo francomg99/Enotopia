@@ -17,11 +17,12 @@ def ind_geo(title, text, text1, bottom_text, url):
         'margin_top': '0.5em',
     }
     title_style = {
-        "width" : "100%",
-        "font_size" : "2.7em",
-        "font_family" : Font.TITLE.value,
-        "color" : TextColor.SECONDARY.value,
+        "width": "100%",
+        "font_size": "2.7em",
+        "font_family": Font.TITLE.value,
+        "color": TextColor.SECONDARY.value,
     }
+
     return rx.heading(
         rx.box(
             # Bloque 1: Izquierda
@@ -50,11 +51,11 @@ def ind_geo(title, text, text1, bottom_text, url):
                 ),
                 style={
                     "position": "absolute",
-                    "top": "50%",
+                    "top": ["10%", "50%"],  # Ajuste para móviles y computadoras
                     "left": "5%",
-                    "transform": "translateY(-50%)",
+                    "transform": ["translateY(0)", "translateY(-50%)"],  # Ajuste para móviles y computadoras
                     "text_align": "left",
-                    "width": "40%",
+                    "width": ["90%", "40%"],  # Ajuste para móviles y computadoras
                     "z_index": "1",
                 }
             ),
@@ -81,7 +82,7 @@ def ind_geo(title, text, text1, bottom_text, url):
                 "z_index": "0"  # Fondo detrás del texto
             },
             width="100%",
-            height="30em",
+            height=["130vh", "30em"],  # Altura para móviles y computadoras
             display="flex",
             spacing="4",
             padding_x=["1em", "3em"],

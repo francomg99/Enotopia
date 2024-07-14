@@ -11,7 +11,7 @@ def info_vinos(src, title, title1, text1, title2, text2, title3, text3, title4, 
     
     return rx.box(
                 rx.hstack(
-                    rx.image(src=src, width="10em", height="auto", zoom_scale=2),
+                    rx.image(src=src, width=["8em", "10em"], height="auto", zoom_scale=2),
                     rx.vstack(
                         rx.text(title, style=styles.other_titles),
                         rx.text(rx.text.strong(title1), text1, style=text_style),
@@ -29,11 +29,13 @@ def info_vinos(src, title, title1, text1, title2, text2, title3, text3, title4, 
                         align_items="start",  # Align text and icons vertically to start
                     ),
                     align_items="center",  # Center image and text vertically
-                    justify_content="center"  # Center image and text horizontally
+                    justify_content="center",  # Center image and text horizontally
+                    flex_direction=["column", "row"],  # Stack columns on mobile and rows on larger screens
+                    spacing="1"  # Add spacing between image and text
                 ),
-                width="50%",
+                width="100%",  # Full width on mobile
+                max_width="50em",  # Limit max width on larger screens
                 justify_content="center",  # Center the box content horizontally
                 align_items="center",  # Center the box content vertically
                 padding="1em"  # Add padding inside the box for spacing
             ),
-    

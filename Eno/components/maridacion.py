@@ -8,8 +8,10 @@ def maridar():
     text_style = {
         'color': TextColor.PRIMARY.value,
         'font_size': Size.LETTER.value,
-        'margin_top': '0.5em',
+        'margin_top': '0.3em',
+        'text_align': 'justify'
     }
+    
     return rx.vstack(
         rx.spacer(height="2em"),  # Add space after the text content
         rx.hstack(
@@ -31,7 +33,7 @@ def maridar():
                 "/cerdo.png",
                 "/pollo.png",
             ),
-            rx.spacer(width="3em"),  # Add space between the two boxes
+            rx.spacer(width=["1em", "3em"]),  # Add responsive space between the two boxes
             info_vinos(
                 "/blanco.png",
                 "VInos Blancos",
@@ -51,7 +53,8 @@ def maridar():
                 "/pimiento.png",
             ),
             justify_content="center",  # Center both boxes horizontally
-            align_items="center"  # Center both boxes vertically
+            align_items="center",  # Center both boxes vertically
+            flex_direction=["column", "row"]  # Stack columns on mobile and rows on larger screens
         ),
         rx.spacer(height="2em"),  # Add space after the boxes
         rx.hstack(
@@ -73,7 +76,7 @@ def maridar():
                 "/sushi.png",
                 "/queso.png",
             ),
-            rx.spacer(width="3em"),  # Add space between the two boxes
+            rx.spacer(width=["1em", "3em"]),  # Add responsive space between the two boxes
             info_vinos(
                 "/espumante.png",
                 "VInos Espumosos",
@@ -93,22 +96,27 @@ def maridar():
                 "/pescado.png",
             ),
             justify_content="center",  # Center both boxes horizontally
-            align_items="center"  # Center both boxes vertically
+            align_items="center",  # Center both boxes vertically
+            flex_direction=["column", "row"]  # Stack columns on mobile and rows on larger screens
         ),
         other_line(),
         rx.hstack(
             rx.spacer(width="2em"),  # Add space after the boxes
-            rx.image(src="/quesos_madera.png", width="30em") ,
+            rx.image(src="/quesos_madera.png", width=["15em", "30em"]),
             rx.vstack(
-            rx.text("CONSEJOS", style=styles.subtitles),
-            rx.text(rx.text.strong("Prueba y experimenta: "), "La mejor manera de aprender sobre maridaje es experimentar y probar diferentes combinaciones.", style=text_style),
-            rx.text(rx.text.strong("Considera las preferencias personales: "), "Los gustos personales juegan un papel importante, así que adapta las sugerencias a tus preferencias y las de tus invitados.", style=text_style),
-            rx.text(rx.text.strong("No temas romper las reglas: "), "Las reglas de maridaje son guías, no leyes. Si encuentras una combinación que disfrutas, eso es lo más importante.", style=text_style)     
-        ),
+                rx.text("CONSEJOS", style=styles.subtitles),
+                rx.text(rx.text.strong("Prueba y experimenta: "), "La mejor manera de aprender sobre maridaje es experimentar y probar diferentes combinaciones.", style=text_style),
+                rx.text(rx.text.strong("Considera las preferencias personales: "), "Los gustos personales juegan un papel importante, así que adapta las sugerencias a tus preferencias y las de tus invitados.", style=text_style),
+                rx.text(rx.text.strong("No temas romper las reglas: "), "Las reglas de maridaje son guías, no leyes. Si encuentras una combinación que disfrutas, eso es lo más importante.", style=text_style)     
+            ),
+        
             rx.spacer(width="2em"),  # Add space after the boxes
             justify_content="center",  # Center both boxes horizontally
-            align_items="center"  # Center both boxes vertically        
-            ),
+            align_items="center",
+            padding_left=Size.SMALL,             
+            padding_right=Size.SMALL,        
+            flex_direction=["column", "row"]  # Stack columns on mobile and rows on larger screens
+        ),
         rx.spacer(height="2em"),  # Add space after the boxes
         justify_content="center",  # Center everything vertically in the main vstack
         align_items="center"  # Center everything horizontally in the main vstack

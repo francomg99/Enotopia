@@ -27,7 +27,7 @@ BASE_STYLE = {
 
 title_style = dict(
     width="100%",
-    font_size=[Size.VERY_BIG.value, Size.TITLE.value],
+    font_size=["3.2em", Size.TITLE.value],
     font_family=Font.TITLE.value,
     color=TextColor.SECONDARY.value,
     )

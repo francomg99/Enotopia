@@ -1,7 +1,7 @@
 import reflex as rx
 from Eno.styles.styles import Size, Font, TextColor
 from Eno.components.title import others_titles
-from Eno.components.wine_line import wine_line
+from Eno.components.wine_line import wine_line, other_line
 from Eno.components.carrusel_blog import carousel_title
 from Eno.components.carrusel import que_ofrecemos
 import Eno.styles.styles as styles
@@ -101,6 +101,7 @@ def quienes_somos_desktop()->rx.Component:
 
 def quienes_somos_mobile() -> rx.Component:
     return rx.mobile_only(
+                carousel_title("¿QUIÉNES SOMOS?", "/cartel.jpg", "center center"),
         rx.vstack(
             rx.text(
                 """
@@ -109,7 +110,9 @@ def quienes_somos_mobile() -> rx.Component:
                 clientes en la cultura del vino de una manera inolvidable.
                 Como apasionados del turismo y amantes del vino, hemos combinado nuestras dos pasiones para ofrecerles 
                 una experiencia única y memorable.""",
+                
                 padding_right=Size.SMALL,
+                padding_top=Size.SMALL,
                 padding_left=Size.SMALL,
                 padding_bottom=Size.SMALL,
                 style={
@@ -118,7 +121,7 @@ def quienes_somos_mobile() -> rx.Component:
                 }
             ),
             rx.image(
-                src="/cava_salentein.jpg",
+                src="/salentein2.jpg",
                 alt="Imagén en montaña de Bodegas Salentein",
                 width="100%",  # Ajusta la imagen al 100% del contenedor
                 height="auto",
@@ -126,7 +129,7 @@ def quienes_somos_mobile() -> rx.Component:
                 padding_right=Size.SMALL,
                 padding_top=Size.SMALL
             ),
-            wine_line(),
+            other_line(),
             others_titles("¿Por qué elegirnos?"),
             rx.center(
                 rx.text.strong(
@@ -134,8 +137,7 @@ def quienes_somos_mobile() -> rx.Component:
                     style=styles.other_titles,
                     padding_left=Size.SMALL,
                     padding_right=Size.SMALL,
-                    padding_top=Size.MEDIUM,
-                    padding_bottom=Size.MEDIUM
+                    padding_bottom=Size.SMALL
                 )
             ),
             rx.text(
@@ -160,8 +162,9 @@ def quienes_somos_mobile() -> rx.Component:
                     'text_align': 'justify'
                 }
             ),
-            wine_line(),
+            other_line(),
             others_titles("¿Qué ofrecemos?"),
+            que_ofrecemos(),
             rx.text(
                 padding_left=Size.SMALL,
                 padding_right=Size.SMALL,

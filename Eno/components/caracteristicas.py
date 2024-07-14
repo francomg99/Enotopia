@@ -9,85 +9,82 @@ def caracteristicas(title, text, title1, text1, title2, text2, src):
         'text_align': 'justify',
         'margin_top': '0.5em',
     }
+
     return rx.heading(
         rx.box(
-            # Bloque 1: Izquierda
+            # Contenedor principal
             rx.box(
-                rx.text(
-                    title,
-                    as_="div",
-                    style=styles.subtitles
+                # Bloque 1: Izquierda
+                rx.box(
+                    rx.text(
+                        title,
+                        as_="div",
+                        style=styles.subtitles
+                    ),
+                    rx.text(
+                        text,
+                        weight="light",
+                        style=text_style,
+                        width=["100%", "33%"],  # Ancho responsivo
+                    ),
+                    style={
+                        "margin_bottom": ["2em", "0"],  # Espacio vertical en móviles
+                        "z_index": "1"
+                    }
                 ),
-                rx.text(
-                    text,
-                    weight="light",
-                    style=text_style,
-                    width="33%"
+                # Bloque 2: Centro derecha
+                rx.box(
+                    rx.text(
+                        title1,
+                        as_="div",
+                        style=styles.subtitles
+                    ),
+                    rx.text(
+                        text1,
+                        align="right",
+                        weight="light",
+                        style={**text_style, 'text_align': 'justify'},
+                        width=["100%", "35%"],  # Ancho responsivo
+                    ),
+                    style={
+                        "margin_bottom": ["2em", "0"],  # Espacio vertical en móviles
+                        "z_index": "1"
+                    }
+                ),
+                # Bloque 3: Abajo izquierda
+                rx.box(
+                    rx.heading(
+                        title2,
+                        as_="div",
+                        style=styles.subtitles
+                    ),
+                    rx.text(
+                        text2,
+                        weight="light",
+                        style=text_style,
+                        width=["100%", "33%"],  # Ancho responsivo
+                    ),
+                    style={
+                        "z_index": "1"
+                    }
                 ),
                 style={
-                    "position": "absolute",
-                    "top": "7%",
-                    "left": "5%",
-                    "z_index": "1"
-                }
+                    "background": f"linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{src}')",
+                    "background_size": "cover",  # Ajustar el tamaño de fondo
+                    "background_position": "center",  # Centrar la imagen de fondo
+                    "position": "relative",
+                    "z_index": "0",  # Fondo detrás del texto
+                    "flex_direction": ["column", "row"],  # Vertical en móvil, horizontal en escritorio
+                },
+                width="100%",
+                height=["50em", "30em"],  # Altura responsivo
+                display="flex",
+                spacing="4",
+                padding_x=["1em", "3em"],  # Padding responsivo
+                padding_y=["2em", "10em"],  # Padding responsivo
+                justify_content="space-between",  # Espaciado entre elementos
+                align_items="center"  # Alineación de elementos
             ),
-            # Bloque 2: Centro derecha
-            rx.box(
-                rx.text(
-                    title1,
-                    as_="div",
-                    style=styles.subtitles
-                ),
-                rx.text(
-                    text1,
-                    align="right",
-                    weight="light",
-                    style={**text_style, 'text_align': 'justify'},
-                    width="100%"
-                ),
-                style={
-                    "position": "absolute",
-                    "top": "50%",
-                    "right": "5%",
-                    "width": "35%",
-                    "transform": "translateY(-60%)",
-                    "z_index": "1"
-                }
-            ),
-            # Bloque 3: Abajo izquierda
-            rx.box(
-                rx.heading(
-                    title2,
-                    as_="div",
-                    style=styles.subtitles
-                ),
-                rx.text(
-                    text2,
-                    weight="light",
-                    style=text_style,
-                    width="33%"
-                ),
-                style={
-                    "position": "absolute",
-                    "bottom": "7%",
-                    "left": "5%",
-                    "z_index": "1"
-                }
-            ),
-            style={
-                "background": f"linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{src}')",
-                "background_size": "cover",  # Ajustar el tamaño de fondo
-                "background_position": "center",  # Centrar la imagen de fondo
-                "position": "relative",
-                "z_index": "0"  # Fondo detrás del texto
-            },
-            width="100%",
-            height="30em",
-            display="flex",
-            spacing="4",
-            padding_x=["1em", "3em"],
-            padding_y=["5.5em", "10em"],
         ),
         size="4"
     )
-        

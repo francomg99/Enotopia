@@ -1,5 +1,5 @@
 import reflex as rx
-from Eno.styles.styles import Size, Color, TextColor
+from Eno.styles.styles import Size, Color
 from Eno.components.drawer import wine_menu_desktop, wine_menu_mobile
 
 def navbar() -> rx.Component:
@@ -10,7 +10,7 @@ def navbar() -> rx.Component:
             rx.image(
                 src="/brasil.png",
                 alt="Bandera de Brasil - Cambio de idioma",
-                width=["2.5em","2em"],
+                width=["2em","2em"],
                 margin_left=["1em","3em"],
             ),
                 href="/br",
@@ -20,9 +20,9 @@ def navbar() -> rx.Component:
             rx.chakra.link(
             rx.chakra.image(
                 src="/enotopia.png",
-                alt="Logo de Enotopía - Letras Negras",
-                width=["25em","8em"],
-                margin=["1em","1em"],
+                alt="Logo de Enotopía - Letras Blancas",
+                width=["6em","8em"],
+                margin="1em",
             ),
                 href="/",
             ),
@@ -32,7 +32,7 @@ def navbar() -> rx.Component:
             width="100%",
             align_items="center",
             spacing="4",
-            margin_right=Size.BIG.value            
+            margin_right=[Size.MEDIUM.value, Size.BIG.value ]           
         ),
         position="sticky",
         bg=Color.CUARTIARY.value,
